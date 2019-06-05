@@ -6,7 +6,7 @@
 ---
 
 ## instance
-`python`的实例
+`python`的实例及资料
 
 ## weixin
 微信公众号中的数据和代码
