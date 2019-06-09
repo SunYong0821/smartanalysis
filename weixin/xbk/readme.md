@@ -43,6 +43,8 @@ surl = select.xpath("//tr[@class='provincetr']//td/a/@href")
 
 有什么问题，可以发信息给这个公众号或者去`github`上提个`issue`吧
 
+> https://github.com/skenoy/smartanalysis/tree/master/weixin/xbk
+
 ![]()
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/mYJibSOraq9pLEwFgUObcImwB175s3Nm5eXowgRhE68Nq10K66oBpHiblP6L9XicpeKs9vqUp6NqrYoypNqP37rTA/0?wx_fmt=png)
