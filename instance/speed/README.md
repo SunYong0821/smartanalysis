@@ -107,9 +107,10 @@ for i, v in enumerate(a):
 6. CPU密集型任务，使用多进程，对于生信而言，这个是我们常用的
 7. 加速时经常用到的内置包：collections，itertools等等
 
-以上每一个几乎都可以单独写一篇长篇大论了，对数据分析或生信分析来讲，用到的最多也就是数据结构要写好，其次就是numpy，多进程和内置包吧，后面的事情后面再说。
+上面的列表每一个几乎都可以单独写一篇长篇大论了，对数据分析或生信分析来讲，用到的最多也就是数据结构要写好，其次就是numpy，多进程和内置包吧，后面的事情后面再说。
 
 > github地址：[https://github.com/skenoy/smartanalysise](https://github.com/skenoy/smartanalysis)
+> 本文地址：instance/speed
 
 ![]()
 
