@@ -170,6 +170,7 @@ x, y, z = 1,2,3
 x < y  < z
 # 67.8 ns ± 12 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 ```
+
 > github地址：[https://github.com/skenoy/smartanalysis](https://github.com/skenoy/smartanalysis)
 > 本文地址：instance/speed
 
