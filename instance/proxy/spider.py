@@ -1,9 +1,12 @@
 # coding=utf8
 
-from random import choice
-
+import random
 import requests
 from lxml import etree
+import vthread
+import queue
+
+q = queue.Queue()
 
 
 def getHeader():
@@ -43,4 +46,33 @@ def getHeader():
                "Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10",
                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36"]
-    return {'user-agent': choice(headers)}
+    return {'user-agent': random.choice(headers)}
+
+
+def getProxy():
+    header = getHeader()
+    html = requests.get('https://www.xicidaili.com/nn', headers=header)
+    html = etree.HTML(html.text)
+    ip = html.xpath('//tr/td[2]/text()')
+    port = html.xpath('//tr/td[3]/text()')
+    http = html.xpath('//tr/td[6]/text()')
+    for a, b, c in zip(ip, port, http):
+        h = getHeader()
+        p = {c: a+':'+b}
+        testProxy(h, p, f'{c},{a}:{b}\n')
+    return len(ip)
+
+
+@vthread.pool(8)
+def testProxy(header, proxy, out):
+    testip = requests.get('http://www.baidu.com',
+                          headers=header, proxies=proxy)
+    if testip.status_code == 200:
+        q.put(out)
+
+
+if __name__ == '__main__':
+    number = getProxy()
+    with open('ip.txt', 'w') as ipfile:
+        for i in range(number):
+            ipfile.write(q.get())
