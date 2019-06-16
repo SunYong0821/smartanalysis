@@ -75,5 +75,4 @@ if __name__ == '__main__':
     number = getProxy()
     with open('ip.txt', 'w') as ipfile:
         for i in range(number):
-            if q.get():
-                ipfile.write(q.get())
+            ipfile.write(q.get())
