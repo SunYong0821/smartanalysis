@@ -2,7 +2,7 @@
 
 昨天的微博服务器又崩溃了。。。吃瓜群众又有新的*多个瓜*可吃了，但本文却不是对弄崩服务器的*瓜*进行分析，而是对昨天的**18岁结婚建议**进行挖掘。
 
-打开该微博的源头，跟之前一样进行移动端的爬虫处理，由于我们知道评论是有可能被关的，而且只能爬100页，所以我们对转发进行抓取。
+打开该微博的源头，跟之前一样进行移动端的爬虫处理，由于我们知道评论是有可能被关的，而且只能爬100页，所以我们对转发信息进行抓取。
 
 ![看看目前多少页](https://mmbiz.qpic.cn/mmbiz_png/mYJibSOraq9ofkMN5wQfhEibms8vyuBTuAzrgduibDm8tJWY5icwOHkpwvnksbEAq8mwkXKWYiaPDzD1nicvTQQjk8nw/0?wx_fmt=png)
 
@@ -11,10 +11,6 @@
 ```python
 def getRepost(num):
     time.sleep(random.randint(5, 10))
-    # rip = randomip()
-    # data = requests.get(
-    #    f'https://m.weibo.cn/api/statuses/repostTimeline?id=4387818392289541&page={str(num)}', headers=header,
-    #    proxies=rip)
     data = requests.get(f'https://m.weibo.cn/api/statuses/repostTimeline?id=4387818392289541&page={str(num)}',
                         headers=header)
     print(num)
