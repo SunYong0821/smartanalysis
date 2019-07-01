@@ -10,18 +10,19 @@ import time
 
 for i in tqdm.tqdm(range(1000), desc='这是第一步: '):
     time.sleep(0.001)
-# 我们来看看有意思的参数吧~
-'''
-ncols: 总的进度条长度
-leave: 进度条完成后是否保留在屏幕上
-ascii: 更换进度条样式
-unit: 循环的单位
-'''
 
 # trange可以替代range，参数一致
 for i in tqdm.trange(1000):
     time.sleep(0.001)
 ```
+
+
+我们来看看有意思的参数吧~
+`ncols`: 总的进度条长度
+`leave`: 进度条完成后是否保留在屏幕上
+`ascii`: 更换进度条样式
+`unit`: 循环的单位
+
 
 如果想看测试情况，请到github上下载（该死的公众号把制作的gif给压缩的不能发上来了。。。）
 
@@ -35,6 +36,8 @@ seq 9999999 | tqdm --bytes | wc -l
 
 find . -name '*.py' -type f -exec cat \{} \; | tqdm | wc -l
 ```
+
+还能怎么玩？去作者的github吧，来看看更多的玩法！~~~
 
 > github：[https://github.com/skenoy/smartanalysis](https://github.com/skenoy/smartanalysis)
 > 
