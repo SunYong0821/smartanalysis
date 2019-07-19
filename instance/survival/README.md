@@ -39,6 +39,9 @@ write.table(out, file="survival.xls", sep="\t", row.names=FALSE, quote=FALSE)
 
 ```python
 from lifelines import KaplanMeierFitter
+from lifelines.statistics import logrank_test
+import pandas as pd
+import matplotlib.pyplot as plt
 f = pd.read_csv('b.csv')
 km = KaplanMeierFitter()
 T = f['futime'] / 365
@@ -47,7 +50,7 @@ km.fit(T, event_observed=E)
 km.plot()
 ```
 
-![]()
+![KM分析](https://mp.weixin.qq.com/cgi-bin/filepage?type=2&begin=0&count=12&group_id=102&view=1&token=427725270&lang=zh_CN)
 
 简单几步就完成了整体的生存分析，那么比较怎么做呢？
 
@@ -62,11 +65,13 @@ km.plot(ax=ax)
 lr = logrank_test(T[gender], T[~gender], E[gender], E[~gender], alpha=.99)
 print(lr.p_value)
 ```
-![]()
+![KM比较](https://mmbiz.qpic.cn/mmbiz_png/mYJibSOraq9oeRXG3U9OkPBjDZzkzlvvVhR3WhiaXicZ3oPFibktPEgdxWSVbkwm7Hk0GokTVEjjrPlZ1hMZcBDnVA/0?wx_fmt=png)
 
 这样我们就得到了P值和比较图了~
 
 当然我也是测试了好几个模块，通过不同的比较发现`lifelines`这个模块封装的最好，用起来最简单，最重要的是可以完美兼容`pandas`和`sklearn`结构，使用起来非常方便！
+
+PS：我把输入也上传了，大家可以随意查看格式内容~请到github上下载~
 
 > github：[https://github.com/skenoy/smartanalysis](https://github.com/skenoy/smartanalysis)
 > 
