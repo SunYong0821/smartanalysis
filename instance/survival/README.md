@@ -50,7 +50,7 @@ km.fit(T, event_observed=E)
 km.plot()
 ```
 
-![KM分析](https://mp.weixin.qq.com/cgi-bin/filepage?type=2&begin=0&count=12&group_id=102&view=1&token=427725270&lang=zh_CN)
+![KM分析](https://mmbiz.qpic.cn/mmbiz_png/mYJibSOraq9oeRXG3U9OkPBjDZzkzlvvVdAFBJYUUu6M5T353MR2PsH0Way0aA35v0icibaFmJnr6MAS1icT8ia5hfA/0?wx_fmt=png)
 
 简单几步就完成了整体的生存分析，那么比较怎么做呢？
 
