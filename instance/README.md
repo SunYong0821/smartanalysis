@@ -17,3 +17,12 @@
 
 #### [multiprocessing](mutiprocessing)
 多进程
+
+#### [tqdm](tqdm)
+进度条
+
+#### [erweima](erweima)
+二维码
+
+#### [survival](survival)
+生存分析
