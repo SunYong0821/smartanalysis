@@ -7,3 +7,6 @@
 
 ## [weixin](weixin)
 微信公众号中抓取的数据及涉及代码
+
+## [bioinfo](bioinfo)
+`python`中的生物信息
